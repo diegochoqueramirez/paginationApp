@@ -1,4 +1,4 @@
-using System;
+sing System;
 using System.Linq;
 using Assessment;
 
@@ -58,7 +58,7 @@ namespace AssessmentConsole
             bool exit = false;
             while(!exit)
             {
-                Console.WriteLine("Current Page:" + pagination);
+                Console.WriteLine("Current Page:" + ImpressPage(pagination.GetVisibleItems()));
                  string option = GetOption(
                 @"Type: \n
                 1. First page
@@ -68,15 +68,29 @@ namespace AssessmentConsole
                 5. Go to page
                 0. Go Back
                 ");
-                if (option == "4") 
+                switch (option)
                 {
-                    pagination.LastPage();
-                } else if (option == "0")
-                {
-                    exit = true;
+                    case "1":
+                        pagination.FirstPage();
+                        break;
+                    case "2":
+                        pagination.FirstPage();
+                        break;
+                    case "3":
+                        pagination.PrevPage();
+                        break;
+                    case "4": 
+                        pagination.LastPage();
+                        break;
+                    case "5":
+                        int page = Int32.Parse(GetOption("Please enter page index"));
+                        pagination.GoToPage(page);
+                        break;
+                    case "0":
+                        exit = false;
+                        break;
                 }
             }
-    
         }
 
         
@@ -86,6 +100,16 @@ namespace AssessmentConsole
             Console.WriteLine(message);
             Console.Write("> ");
             return Console.ReadLine();
+        }
+
+        private string ImpressPage(IEnumerable<string> collection) 
+        {
+            string res = "";
+            foreach(var element in collection) 
+            {
+                res += element + ", ";
+            }
+            return res;
         }
     }
 }

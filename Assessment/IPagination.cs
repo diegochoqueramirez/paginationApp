@@ -30,5 +30,9 @@ namespace Assessment
 
         //// <summary>Returns the elements that are visible in the current page</summary>
         IEnumerable<T> GetVisibleItems();
+
+        void SortAsc();
+
+        void SortDsc();
     }
 }

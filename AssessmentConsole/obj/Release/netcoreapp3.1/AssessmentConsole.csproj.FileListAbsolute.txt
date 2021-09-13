@@ -1,0 +1,3 @@
+C:\Users\diego\Source\Repos\dev-program-assessment\AssessmentConsole\obj\Release\netcoreapp3.1\AssessmentConsole.AssemblyInfoInputs.cache
+C:\Users\diego\Source\Repos\dev-program-assessment\AssessmentConsole\obj\Release\netcoreapp3.1\AssessmentConsole.AssemblyInfo.cs
+C:\Users\diego\Source\Repos\dev-program-assessment\AssessmentConsole\obj\Release\netcoreapp3.1\AssessmentConsole.csproj.CoreCompileInputs.cache

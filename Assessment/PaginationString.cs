@@ -17,42 +17,52 @@ namespace Assessment
         }
         public void FirstPage()
         {
-            currentPage = 1;
+            currentPage = 0;
         }
 
         public void GoToPage(int page)
         {
-            throw new System.NotImplementedException();
+            if(currentPage >= page) {
+                currentPage = page;
+            }
         }
 
         public void LastPage()
         {
-            throw new System.NotImplementedException();
+            currentPage = pageSize -1;
         }
 
         public void NextPage()
         {
-            
+            currentPage++;
         }
 
         public void PrevPage()
         {
-            throw new System.NotImplementedException();
+            currentPage--;
         }
 
         public IEnumerable<string> GetVisibleItems()
         {
-            return data.Skip(currentPage*pageSize).Take(5);
+            return data.Skip(currentPage*pageSize).Take(pageSize);
         }
 
         public int CurrentPage()
         {
-            throw new System.NotImplementedException();
+            return currentPage;
         }
 
         public int Pages()
         {
-            throw new System.NotImplementedException();
+            return pageSize;
+        }
+
+        public void SortAsc() {
+            //data.Sort();
+        }
+
+        public void SortDsc() {
+            //data.Source((first,success) => b.CompareTo(a));
         }
     }
 }

@@ -4,7 +4,7 @@ namespace Assessment
 {
     public class StringProvider : IElementsProvider<string>
     {
-        private readonly string separator = ",";
+        private static char[] separator = new char[] {' ', ',', '|'};
 
 
         public IEnumerable<string> ProcessData(string source)
